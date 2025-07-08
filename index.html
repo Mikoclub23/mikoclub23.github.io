@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MIKO CLUB</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="imagenes/logo_miko.jpg" alt="Logo Miko Club" class="logo">
+    <h1>🛍️ MIKO CLUB</h1>
+    <h2>🎒 VA CONTIGO</h2>
+    <h3>✨ SOMOS TU MEJOR OPCIÓN ✨</h3>
+    <div class="ubicacion">
+      <p>📍 <strong>Visítanos en:</strong> Calle Aztecas #17, Plaza Charly, Interior 23, Cp 06020, Col.Centro, Delegacion Cuahtemoc</p>
+    </div>
+    <button id="btnCategorias">📂 Categorías</button>
+  </header>
+
+  <nav id="categorias" class="oculto">
+    <button onclick="mostrarCategoria('mochilas')">🎒 Mochilas</button>
+    <button onclick="mostrarCategoria('loncheras')">🧃 Loncheras</button>
+    <button onclick="mostrarCategoria('lapiceras')">🖊️ Lapiceras</button>
+  </nav>
+
+  <!-- Categoría: Mochilas -->
+  <div id="mochilas" class="categoria">
+    <div class="producto">
+      <h3>MD469 - $220</h3>
+      <div class="galeria-imagenes">
+        <img src="imagenes/md469_1.jpg" alt="MD469 - imagen 1">
+        <img src="imagenes/md469_2.jpg" alt="MD469 - imagen 2">
+      </div>
+      <p class="descripcion">Modelo: MD469<br>Medidas: 45x30 cm<br>Mochila resistente con compartimentos múltiples</p>
+      <p class="precio" data-producto="md469">$220</p>
+
+      <div class="colores">
+        <label>Negro:</label>
+        <input type="number" id="color-negro" class="color-input" data-producto="md469" value="0" min="0" onchange="actualizarCantidad()">
+        <br>
+        <label>Azul:</label>
+        <input type="number" id="color-azul" class="color-input" data-producto="md469" value="0" min="0" onchange="actualizarCantidad()">
+      </div>
+
+      <div class="contador">
+        <label>Total piezas:</label>
+        <input type="number" id="cantidad-md469" value="0" readonly>
+      </div>
+
+      <button class="btn btn-agregar" onclick="actualizarCantidad()">Actualizar Cantidad</button>
+    </div>
+  </div>
+
+  <!-- Categoría: Loncheras -->
+  <div id="loncheras" class="categoria">
+    <div class="producto">
+      <h3>ASJF - $150</h3>
+      <div class="galeria-imagenes">
+        <img src="imagenes/ASJF.jpg" alt="ASJF - imagen">
+      </div>
+      <p class="descripcion">Modelo: ASJF<br>Lonchera térmica con compartimento para botellas</p>
+      <p class="precio" data-producto="asjf">$150</p>
+
+      <div class="colores">
+        <label>Negro:</label>
+        <input type="number" id="color-asjf-negro" class="color-input" data-producto="asjf" value="0" min="0" onchange="actualizarCantidadProducto('asjf')">
+        <br>
+        <label>Rojo:</label>
+        <input type="number" id="color-asjf-rojo" class="color-input" data-producto="asjf" value="0" min="0" onchange="actualizarCantidadProducto('asjf')">
+      </div>
+
+      <div class="contador">
+        <label>Total piezas:</label>
+        <input type="number" id="cantidad-asjf" value="0" readonly>
+      </div>
+
+      <button class="btn btn-agregar" onclick="actualizarCantidadProducto('asjf')">Actualizar Cantidad</button>
+    </div>
+  </div>
+
+  <!-- Categoría: Lapiceras -->
+  <div id="lapiceras" class="categoria">
+    <div class="producto">
+      <h3>5.11 Cinturón - $180</h3>
+      <div class="galeria-imagenes">
+        <img src="imagenes/5.11 cinturon.jpg" alt="5.11 Cinturón - imagen">
+      </div>
+      <p class="descripcion">Modelo: 5.11 Cinturón<br>Lapicera con múltiples compartimentos</p>
+      <p class="precio" data-producto="511">$180</p>
+
+      <div class="colores">
+        <label>Negro:</label>
+        <input type="number" id="color-511-negro" class="color-input" data-producto="511" value="0" min="0" onchange="actualizarCantidadProducto('511')">
+        <br>
+        <label>Verde:</label>
+        <input type="number" id="color-511-verde" class="color-input" data-producto="511" value="0" min="0" onchange="actualizarCantidadProducto('511')">
+      </div>
+
+      <div class="contador">
+        <label>Total piezas:</label>
+        <input type="number" id="cantidad-511" value="0" readonly>
+      </div>
+
+      <button class="btn btn-agregar" onclick="actualizarCantidadProducto('511')">Actualizar Cantidad</button>
+    </div>
+  </div>
+
+  <!-- Aquí estaba la sección de Combos que ha sido eliminada -->
+
+  <div class="opciones-precio">
+    <h3>Información de precios:</h3>
+    <div class="info-precios">
+      <p>Los precios se ajustan automáticamente según cantidad:</p>
+      <ul>
+        <li>Precio base: 6-11 piezas</li>
+        <li>Precio por docena: 12-29 piezas</li>
+        <li>Precios por caja: 30 piezas en adelante</li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="btn btn-confirmar" onclick="confirmarPedido()">Confirmar Pedido por WhatsApp</button>
+
+  <footer>
+    <p>Somos distribuidores autorizados de Miko Club</p>
+    <p>Contacto: mikoclub023@outlook.com</p>
+    <p>WhatsApp: 52 55 4938 4964</p>
+  </footer>
+</body>
+</html>
